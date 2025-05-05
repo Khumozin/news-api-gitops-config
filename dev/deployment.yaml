@@ -43,6 +43,7 @@ spec:
       annotations:
         vault.hashicorp.com/agent-inject: "true"
         vault.hashicorp.com/role: "news-api-role"
+        vault.hashicorp.com/agent-inject-env: "true"
         vault.hashicorp.com/agent-inject-secret-NEWS_API_KEY: "secret/data/news-api"
         vault.hashicorp.com/agent-inject-template-NEWS_API_KEY: |
           {{- with secret "secret/data/news-api" -}}
@@ -57,10 +58,7 @@ spec:
             - containerPort: 3000
           env:
             - name: NEWS_API_KEY
-              valueFrom:
-                configMapKeyRef:
-                  name: news-api
-                  key: NEWS_API_KEY
+              value: ""
 ---
 apiVersion: v1
 kind: Service
