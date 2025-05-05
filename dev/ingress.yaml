@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: news-api
+  namespace: news-api
+  annotations:
+    cert-manager.io/cluster-issuer: cloudflare-clusterissuer
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  tls:
+    - hosts:
+        - news-api.khumo.cloud
+      secretName: news-api-certificate-secret
+  rules:
+    - host: news-api.khumo.cloud
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: news-api
+                port:
+                  number: 80
