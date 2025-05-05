@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: todo-application
+  name: news-api-application
   namespace: argocd
 spec:
   project: default
