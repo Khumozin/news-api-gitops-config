@@ -59,7 +59,7 @@ spec:
             - name: NEWS_API_KEY
               valueFrom:
                 configMapKeyRef:
-                  name: news-api-secret
+                  name: news-api
                   key: NEWS_API_KEY
 ---
 apiVersion: v1
