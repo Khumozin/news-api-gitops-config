@@ -61,14 +61,6 @@ spec:
                 configMapKeyRef:
                   name: news-api-secret
                   key: NEWS_API_KEY
-          volumeMounts:
-            - name: vault-secrets
-              mountPath: /vault/secrets
-              readOnly: true
-      volumes:
-        - name: vault-secrets
-          emptyDir: {}
-
 ---
 apiVersion: v1
 kind: Service
