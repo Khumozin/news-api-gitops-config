@@ -56,9 +56,6 @@ spec:
           image: khumo/news-api:v1.0.3
           ports:
             - containerPort: 3000
-          env:
-            - name: NEWS_API_KEY
-              value: ""
 ---
 apiVersion: v1
 kind: Service
