@@ -45,7 +45,7 @@ spec:
         vault.hashicorp.com/agent-inject-secret-NEWS_API_KEY: "secret/data/news-api"
         vault.hashicorp.com/agent-inject-template-NEWS_API_KEY: |
           {{- with secret "secret/data/news-api" -}}
-          NEWS_API_KEY={{ .Data.data.NEWS_API_KEY }}
+          export NEWS_API_KEY="{{ .Data.data.NEWS_API_KEY }}"
           {{- end }}
         vault.hashicorp.com/agent-inject-status: "update"
         vault.hashicorp.com/role: "news-api-role"
