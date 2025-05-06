@@ -41,7 +41,7 @@ spec:
       labels:
         app: news-api
       annotations:
-        vault.hashicorp.com/agent-inject: "true"
+        # vault.hashicorp.com/agent-inject: "true"
         vault.hashicorp.com/agent-inject-status: "update"
         vault.hashicorp.com/role: "news-api-role"
         vault.hashicorp.com/agent-inject-env: "true"
