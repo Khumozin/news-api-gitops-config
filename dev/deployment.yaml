@@ -58,11 +58,11 @@ spec:
           ports:
             - containerPort: 3000
           command: ["/bin/sh"]
-            args:
-              - "-c"
-              - |
-                export $(cat /vault/secrets/NEWS_API_KEY | xargs) && \
-                exec node dist/index.js
+          args:
+            - "-c"
+            - |
+              export $(cat /vault/secrets/NEWS_API_KEY | xargs) && \
+              exec node dist/index.js
 ---
 apiVersion: v1
 kind: Service
